@@ -1,0 +1,13 @@
+{{#each ideas}}<!--ideas object i loop in it , include title and deatails-->
+<div class = 'card card-body mb-2'>
+  <h4>{{title}}</h4>
+  <p>{{details}}</P>
+  <a class = 'btn btn-dark block mb-2' href = '/ideas/edit/{{id}}'>Edit </a>
+  <form method="post" action="/ideas/{{id}}?_method=DELETE">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class="btn btn-danger btn-block" value="DELETE">
+  </form>
+</div>
+{{else}}
+<p>No videos here , remah </p>
+{{/each}}
